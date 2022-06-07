@@ -30,6 +30,6 @@ These are some of the improvements that could be covered:
 
 <table>
  <tr>
-  <td> <img src="./screenshots/GithubClient\ home.png" width="200"> </td>
+  <td> <img src="./screenshots/GithubClient home.png" width="200"> </td>
  </tr>
 </table>
