@@ -26,6 +26,8 @@
 		4848439F284EBB7F0080E83F /* PullRequestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4848439E284EBB7F0080E83F /* PullRequestResponse.swift */; };
 		484843A1284EBBB80080E83F /* ClosedPRListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484843A0284EBBB80080E83F /* ClosedPRListViewModel.swift */; };
 		484843A3284EBC760080E83F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484843A2284EBC750080E83F /* Constants.swift */; };
+		484843A6284F397A0080E83F /* GCError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484843A5284F397A0080E83F /* GCError.swift */; };
+		484843A8284F40960080E83F /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484843A7284F40960080E83F /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		4848439E284EBB7F0080E83F /* PullRequestResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequestResponse.swift; sourceTree = "<group>"; };
 		484843A0284EBBB80080E83F /* ClosedPRListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedPRListViewModel.swift; sourceTree = "<group>"; };
 		484843A2284EBC750080E83F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		484843A5284F397A0080E83F /* GCError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCError.swift; sourceTree = "<group>"; };
+		484843A7284F40960080E83F /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				484843A2284EBC750080E83F /* Constants.swift */,
+				484843A5284F397A0080E83F /* GCError.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				48484399284EBB0D0080E83F /* UIView+Extension.swift */,
+				484843A7284F40960080E83F /* UIViewController+Extension.swift */,
 			);
 			path = "Extension-Utils";
 			sourceTree = "<group>";
@@ -379,11 +385,13 @@
 				48484396284EBA720080E83F /* GithubDataRepository.swift in Sources */,
 				4848435B284EB02B0080E83F /* PRListViewController.swift in Sources */,
 				484843A1284EBBB80080E83F /* ClosedPRListViewModel.swift in Sources */,
+				484843A8284F40960080E83F /* UIViewController+Extension.swift in Sources */,
 				48484357284EB02B0080E83F /* AppDelegate.swift in Sources */,
 				4848439A284EBB0D0080E83F /* UIView+Extension.swift in Sources */,
 				48484393284EBA2D0080E83F /* HTTPClient.swift in Sources */,
 				4848438D284EB4880080E83F /* PullRequestCell.swift in Sources */,
 				484843A3284EBC760080E83F /* Constants.swift in Sources */,
+				484843A6284F397A0080E83F /* GCError.swift in Sources */,
 				48484390284EB4B90080E83F /* LazyImageView.swift in Sources */,
 				4848439F284EBB7F0080E83F /* PullRequestResponse.swift in Sources */,
 				48484359284EB02B0080E83F /* SceneDelegate.swift in Sources */,

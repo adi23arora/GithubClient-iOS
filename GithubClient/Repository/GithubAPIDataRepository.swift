@@ -12,16 +12,21 @@ class GithubAPIDataRepository: GithubAPIResouceRepository {
         static let endpoint = "https://api.github.com/repos/twbs/bootstrap/pulls?state=closed"
     }
 
-    func fetchClosedPR(completion: @escaping ([PullRequestResponse]?) -> Void) {
+    func fetchClosedPR(completion: @escaping ([PullRequestResponse]?, GCError?) -> Void) {
         HTTPClient.shared.getRequest(url: APIConstants.endpoint) { result in
-            if case .success(let data) = result {
+            switch result {
+            case .success(let data):
                 do {
                     let prResponse = try JSONDecoder().decode([PullRequestResponse].self,
                                                               from: data)
-                    completion(prResponse)
-                } catch (let error) {
-                    print("Error occured: \(error)")
+                    completion(prResponse, nil)
+                } catch {
+                    completion(nil, .invalidData)
                 }
+            case .failure(let data):
+                completion(nil, data)
+            case .none:
+                completion(nil, .undefined)
             }
         }
     }

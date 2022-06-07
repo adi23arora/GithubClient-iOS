@@ -6,7 +6,7 @@
 //
 
 protocol GithubDataRepository {
-    func fetchClosedPR(completion: @escaping ([PullRequestResponse]?) -> Void)
+    func fetchClosedPR(completion: @escaping ([PullRequestResponse]?, GCError?) -> Void)
 }
 
 protocol GithubAPIResouceRepository: GithubDataRepository {

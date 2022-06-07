@@ -26,10 +26,14 @@ class PRListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        viewModel.parseClosedPRData()
         title = "Closed Pull Requests"
         configureTableView()
         configureProgressView()
+        fetchClosedPRData()
+    }
+
+    private func fetchClosedPRData() {
+        viewModel.parseClosedPRData()
         showProgress()
     }
 
@@ -86,9 +90,17 @@ extension PRListViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension PRListViewController: ClosedPRListViewModelDelegate {
-    func updateClosedPRData(with data: [PullRequest]) {
-        pullRequestData = data
-        hideProgress()
-        tableView.reloadData()
+    func updateClosedPRData(with data: [PullRequest]?, error: GCError? = nil) {
+        if let data = data {
+            pullRequestData = data
+            hideProgress()
+            tableView.reloadData()
+        } else if let error = error {
+            presentAlert(title: "Error",
+                         message: error.rawValue,
+                         buttonTitle: "Retry") { [weak self] in
+                self?.fetchClosedPRData()
+            }
+        }
     }
 }
